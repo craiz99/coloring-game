@@ -1,0 +1,10 @@
+{
+  "name": "Little Purple Drawing Club",
+  "short_name": "Drawing Club",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eee5fb",
+  "theme_color": "#7742cb",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

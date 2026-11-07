@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-
-:root{font-family:'Nunito',ui-rounded,'Trebuchet MS',system-ui,sans-serif;color:#382056;background:#eee5fb;font-synthesis:none;font-weight:600;--purple:#7742cb;--ink:#382056;--lilac:#f5efff;--white:#fff}
+:root{font-family:ui-rounded,'Trebuchet MS',system-ui,sans-serif;color:#382056;background:#eee5fb;font-synthesis:none;font-weight:600;--purple:#7742cb;--ink:#382056;--lilac:#f5efff;--white:#fff}
 *{box-sizing:border-box}
 body{margin:0;padding:24px max(16px,env(safe-area-inset-right)) 32px max(16px,env(safe-area-inset-left));-webkit-tap-highlight-color:transparent}
 button,input,select{font:inherit}

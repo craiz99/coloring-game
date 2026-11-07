@@ -2,6 +2,18 @@
 
 A tablet-first, entirely browser-based drawing and pretend-play game for young artists. Color 18 animal and character templates, draw freely, then bring reusable cutouts into your own worlds.
 
+## Play on iPad
+
+Open **https://craiz99.github.io/coloring-game/** in Safari after GitHub Pages has been enabled and its deployment has completed. No computer, account, or app installation is needed to play.
+
+For an app-like experience, use Safari’s Share menu → Add to Home Screen. The first visit needs internet; the production build caches the complete game for later offline visits. Keep the first visit open until all artwork has loaded. Updates become active after all older game tabs are closed and the game is reopened. Safari may evict offline files and saves, so keep JSON backups. Device speech voices may require an initial download through iPadOS.
+
+To move existing creations from the local preview, export a backup under **For grown-ups**, then import it at the hosted address on the iPad. Saves stay on each device/browser; they do not sync.
+
+## GitHub Pages deployment
+
+In repository **Settings → Pages**, select **GitHub Actions** as the source once. `.github/workflows/pages.yml` runs the tests, builds the self-contained static game, and publishes it on each push to `main`. It can also be run manually from Actions. Relative asset paths support the `/coloring-game/` project URL. The build generates a versioned service worker with all game files; no external fonts, APIs, or media hosts are used.
+
 ## Run locally
 
 Requires Node.js 22.12+ (Node 24 recommended).
@@ -32,7 +44,7 @@ The production `dist/` directory can be served by any static HTTP host. No serve
 
 ## Saving and privacy
 
-The versioned game is stored in IndexedDB in this browser, for this exact origin (including port). Clearing browser data, private browsing, changing the URL/port, or changing devices can make saves unavailable. No child data leaves the device. The optional Google Fonts stylesheet downloads a font; the game also works with system fonts when it is unavailable.
+The versioned game is stored in IndexedDB in this browser, for this exact origin (including port). Clearing browser data, private browsing, changing the URL/port, or changing devices can make saves unavailable. No child data leaves the device. Fonts, artwork, sound synthesis, and game code are all local to the site; there are no third-party network dependencies.
 
 Use **For grown-ups → Export backup** regularly. Import validates the backup before asking to replace current data. Export a backup before restoring another one. PNG downloads are pictures; only JSON backups preserve editable layers and worlds. Storage failures show a persistent banner; keep the tab open and export a backup if it appears.
 
@@ -48,4 +60,4 @@ All coloring templates and scenes are authored SVG regions; brush layers are PNG
 
 Tests cover bounded fill, cutout bounds, history, independent copies, the complete roster, backup validation, IndexedDB round trips, failed-load protection, and editor navigation races. Browser QA is recorded in `QA.md`. Actual iPad Safari, physical stylus feel, and available device speech voices require testing on the device.
 
-Source repository: [craiz99/coloring-game](https://github.com/craiz99/coloring-game). The implementation is submitted through a pull request so it can be reviewed before merging.
+Source repository: [craiz99/coloring-game](https://github.com/craiz99/coloring-game). The game is published by the GitHub Pages workflow after changes reach main.
